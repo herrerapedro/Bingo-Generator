@@ -3,7 +3,7 @@ namespace BingoUI
 {
     public interface ICacheStore
     {
-        bool Exists(int i);
+        Maybe<int> Read(int i);
         void Save(int i);
         void Clear();
     }

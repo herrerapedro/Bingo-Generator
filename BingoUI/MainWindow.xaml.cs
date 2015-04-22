@@ -54,7 +54,7 @@ namespace BingoUI
                 do
                 {
                     imageNumber = random.Next(1, 26);
-                } while (this.cache.Exists(imageNumber) || imageNumber == 13);
+                } while (this.cache.Read(imageNumber).Any() || imageNumber == 13);
 
                 if (i == 13) imageNumber = 13;
 

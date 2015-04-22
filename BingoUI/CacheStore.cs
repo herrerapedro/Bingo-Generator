@@ -16,9 +16,11 @@ namespace BingoUI
             this.values = new ConcurrentBag<int>();
         }
 
-        public bool Exists(int i)
+        public Maybe<int> Read(int i)
         {
-            return this.values.Contains(i);
+            if (this.values.Contains(i))
+                return new Maybe<int>(i);
+            return new Maybe<int>();
         }
 
         public void Save(int i)
