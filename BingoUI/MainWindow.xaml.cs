@@ -26,6 +26,8 @@ namespace BingoUI
 
         public MainWindow(ICacheStore cache)
         {
+            if (cache == null) throw new ArgumentNullException("cache");
+
             InitializeComponent();
 
             this.cache = cache;
